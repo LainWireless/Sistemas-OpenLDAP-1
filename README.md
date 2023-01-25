@@ -1,6 +1,6 @@
 # Instalación y configuración inicial de OpenLDAP
 
-## Realiza la instalación y configuración básica de OpenLDAP en alfa, utilizando como base el nombre DNS asignado. Deberás crear un usuario llamado prueba y configurar una máquina cliente basada en Debian y Rocky para que pueda validarse en servidor ldap configurado anteriormente con el usuario prueba.
+## Realiza la instalación y configuración básica de OpenLDAP en alfa, utilizando como base el nombre DNS asignado. Deberás crear un usuario llamado prueba y configurar una máquina cliente basada en Ubuntu y Rocky para que pueda validarse en servidor ldap configurado anteriormente con el usuario prueba.
 
 ### 1. Instalación y configuración de OpenLDAP en el Servidor
 
@@ -228,7 +228,7 @@ Instalamos los paquetes necesarios (libnss-ldap, libpam-ldapd y nscd):
 ```bash
 apt install -y libnss-ldap libpam-ldapd nscd
 ```
-Lo vamos configurar como en el servidor, pero esta vez los datos introducidos serán los del servidor LDAP y no los del host local (en este caso el cliente Debian).    
+Lo vamos configurar como en el servidor, pero esta vez los datos introducidos serán los del servidor LDAP y no los del host local (en este caso el cliente Ubuntu).    
 
 Ahora, vamos a modificar el fichero /etc/nsswitch.conf para que el sistema utilice el servicio LDAP para la resolución de nombres:
 ```bash
@@ -236,7 +236,7 @@ nano /etc/nsswitch.conf
 ```
 ![LDAP](capturas/17.png)
 
-Tras esto, si ejecutamos se reiniciará el servicio nscd y ya podremos acceder al servidor LDAP desde el cliente Debian con login:
+Tras esto, si ejecutamos se reiniciará el servicio nscd y ya podremos acceder al servidor LDAP desde el cliente Ubuntu con login:
 ```bash
 service nscd restart
 ```
