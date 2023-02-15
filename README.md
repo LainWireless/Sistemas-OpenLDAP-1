@@ -164,7 +164,7 @@ Una vez que ya tenemos el fichero modificado, reiniciaremos el servicio nfs-kern
 En el servidor LDAP, instalamos los distintos paquetes que permiten que el sistema sea capaz de resolver nombres de usuarios (UID) y grupos (GID), consultar información a un directorio LDAP, identificarse o cachear la resolución de nombres. 
 
 ```bash
-apt-get install libpam-ldapd nscd libnss-ldap
+apt-get install libpam-ldapd libpam-ldap nscd libnss-ldap
 ```
 
 Lo configuramos en mi caso de la siguiente forma:
